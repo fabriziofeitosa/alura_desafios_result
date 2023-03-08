@@ -37,6 +37,7 @@
       <button class="mt-2 btn btn-primary" id="action">Tentar adivinhar</button>
 
       <div id="result" class="mt-4"></div>
+      <hr />
 
       <script>
         let randomNumber = Math.floor(Math.random() * 100) + 1;
@@ -47,16 +48,16 @@
         const button = document.querySelector('#action');
 
         const guess = () => {
-          let n1 = parseInt(document.querySelector('#chute').value);
+          let n = parseInt(document.querySelector('#chute').value);
 
-          if (isNaN(n1)) return alert('Insira o chute');
+          if (isNaN(n)) return alert('Insira o chute');
 
-          if (n1 > randomNumber) {
-            out.innerHTML += `Meu número é <b>menor</b>! <br>`;
-          } else if (n1 < randomNumber) {
-            out.innerHTML += `Meu número é <b>maior</b>! <br>`;
+          if (n > randomNumber) {
+            out.innerHTML += `Você falou <b>${n}</b>. Meu número é <b>menor</b>! <br>`;
+          } else if (n < randomNumber) {
+            out.innerHTML += `Você falou <b>${n}</b>. Meu número é <b>maior</b>! <br>`;
           } else {
-            out.innerHTML += `Parabéns <b>${n1}</b> é meu número! 👏 <br>`;
+            out.innerHTML += `PARABÉNS, <b>${n}</b> é meu número! 👏 <br>`;
           }
         };
 
