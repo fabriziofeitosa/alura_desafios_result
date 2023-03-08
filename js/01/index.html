@@ -25,7 +25,11 @@
         <div class="mt-3" id="saida"></div>
 
         <script>
-            // Código JS aqui
+            document.getElementById("botao").onclick = event => {
+                for (var i = 0; i < 10; i++) {
+                    document.getElementById("saida").innerHTML += `${i+1}</br>`
+                }
+            };
         </script>
 
     </div>
