@@ -17,7 +17,7 @@
             
         </style>
 
-        <h1>Contando de 1 a 10</h1>
+        <h1>Contando de 10 a 1</h1>
         <p>Quem nunca contou até 10 né?</p>
         <hr>
 
@@ -32,13 +32,12 @@
 
             function contar() {
                 saida.textContent = "";
-                let limite = 10;
-                for (let index = 1; index <= limite; index++) {
+                let limite = 0;
+                for (let index = 10; index >= limite; index--) {
                     saida.innerHTML += `${index}<br>`;
                 }
             }
         </script>
     </div>
 </body>
-
 </html>
