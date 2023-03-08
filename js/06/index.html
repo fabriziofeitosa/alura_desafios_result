@@ -210,21 +210,21 @@
       </form>
 
       <script>
-        const inputs = document.querySelectorAll('.form-group');
+        const inputs = document.querySelectorAll('.form-group input');
 
-        inputs.forEach((item) => {
-          let input = item.querySelector('input');
-
-          if (input.value !== '') {
-            item.classList.add('valid');
+        const updatePlaceholderClass = (element) => {
+          if (element.value) {
+            element.parentNode.classList.add('valid');
+          } else {
+            element.parentNode.classList.remove('valid');
           }
+        };
+
+        inputs.forEach((input) => {
+          updatePlaceholderClass(input);
 
           input.addEventListener('input', (e) => {
-            if (input.value === '') {
-              item.classList.remove('valid');
-            } else {
-              item.classList.add('valid');
-            }
+            updatePlaceholderClass(input);
           });
         });
       </script>
