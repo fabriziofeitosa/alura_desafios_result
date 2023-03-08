@@ -223,7 +223,9 @@
         inputs.forEach((input) => {
           updatePlaceholderClass(input);
 
-          input.addEventListener('input', () => updatePlaceholderClass(input));
+          input.addEventListener('input', (e) => {
+            updatePlaceholderClass(input);
+          });
         });
       </script>
     </div>
