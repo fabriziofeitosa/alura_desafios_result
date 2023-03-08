@@ -51,12 +51,13 @@
           let value1 = Number(document.getElementById('numero-1').value);
           let value2 = Number(document.getElementById('numero-2').value);
 
+          if (isNaN(value1) || isNan(value2)) return alert('Insira os números');
+
           out.innerHTML = '';
 
           if (value1 > value2) {
             out.innerHTML = `Entre ${value1} e ${value2}, ${value1} é o maior!`;
-          }
-          if (value1 < value2) {
+          } else if (value1 < value2) {
             out.innerHTML = `Entre ${value1} e ${value2}, ${value2} é o maior!`;
           } else {
             out.innerHTML = `${value1} e ${value2} são iguais!`;
