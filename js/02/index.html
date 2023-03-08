@@ -27,22 +27,17 @@
       <div class="mt-3" id="saida"></div>
 
       <script>
-        const out = document.getElementById('saida');
         const button = document.getElementById('botao');
 
-        button.onclick = () => {
-          out.innerHTML = '';
+        const out = document.getElementById('saida');
 
-          for (let i = 1; i <= 10; i++) {
+        button.onclick = () => {
+          for (let i = 0; i <= 10; i++) {
             let paragraph = document.createElement('p');
             paragraph.innerHTML = i;
 
             out.appendChild(paragraph);
           }
-
-          let divisor = document.createElement('hr');
-
-          out.appendChild(divisor);
         };
       </script>
     </div>
