@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <title>Resposta do Desafio - 06</title>
+</head>
+
+<body>
+    <div class="container py-5">
+
+        <style>
+            .slider {
+                position: relative;
+                height: 500px;
+                overflow: hidden;
+            }
+
+            .slider img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+                object-fit: cover;
+            }
+
+            .slider img.active {
+                opacity: 1;
+            }
+
+        </style>
+
+        <h1>Slide - Sem libs externas!</h1>
+        <p>Um sistema muito simples de Slide pra não quebrar tanto a cabeça.</p>
+        <hr />
+
+        <div class="slider">
+            <img src="https://picsum.photos/500/?random=1" alt="Slide 1" class="active" />
+            <img src="https://picsum.photos/500/?random=2" alt="Slide 2" />
+            <img src="https://picsum.photos/500/?random=3" alt="Slide 3" />
+        </div>
+
+        <div class="d-flex gap-2 mt-3">
+            <button id="prev" class="btn btn-secondary d-block w-100">Anterior slide</button>
+            <button id="next" class="btn btn-primary d-block w-100">Próximo slide</button>
+        </div>
+
+        <script>
+
+            var allInputs = document.querySelectorAll("#formArea input");
+            allInputs.forEach(checkInputValue);
+
+            function checkInputValue(element) {
+                if (element.value)
+                    element.parentNode.classList.add("valid");
+
+                "keydown,keyup,keypress".split(",").forEach(action => {
+                    element.addEventListener(action, updatePlaceholderClass)
+                });
+
+            }
+
+            function updatePlaceholderClass() {
+                if (this.value)
+                    this.parentNode.classList.add("valid");
+                else
+                    this.parentNode.classList.remove("valid")
+            }
+
+        </script>
+
+    </div>
+</body>
+
+</html>
