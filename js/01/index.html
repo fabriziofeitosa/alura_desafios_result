@@ -25,7 +25,17 @@
         <div class="mt-3" id="saida"></div>
 
         <script>
-            // Código JS aqui
+            const saida = document.querySelector("#saida");
+            const button = document.querySelector("#botao")
+            button.addEventListener('click', contador)
+
+            function contador(){
+                saida.textContent = '';
+                let limite = 10;
+                for (let i = 1; i <= limite; i++) {
+                    saida.innerHTML += `${i}<br>`;
+                }
+            }
         </script>
 
     </div>
