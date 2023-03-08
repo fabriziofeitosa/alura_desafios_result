@@ -88,7 +88,7 @@
 
         <div id="appArea">
             <nav class="app-menu">
-                <div class="closeMenu menu-toggle-button" >❌ <a href="#" onclick="menu()">Fechar Menu</a> </div>
+                <div class="closeMenu menu-toggle-button" >❌ <a href="#">Fechar Menu</a> </div>
                 <ul class="app-menu-list">
                     <li class="app-menu-item"><a href="#">Início</a></li>
                     <li class="app-menu-item"><a href="#">Blog</a></li>
@@ -102,16 +102,27 @@
                 <p>Lá no item de class <code>.app-menu</code> você pode adicionar a class <code>.menu-visible</code> que
                     criei e mostrar esse menu. O inverso também.</p>
 
-                <button class="openMenu btn btn-primary menu-toggle-button" onclick="menu()">Abrir Menu</button>
+                <button class="openMenu btn btn-primary menu-toggle-button">Abrir Menu</button>
             </div>
 
         </div>
 
         <script>
-            function menu() {
-                var element = document.querySelector(".app-menu");
-                element.classList.toggle("menu-visible");
+            const appMenu = document.querySelector(".app-menu");
+            const menuToggleButtons = document.querySelectorAll(".menu-toggle-button");
+
+            menuToggleButtons.forEach(button => button.addEventListener('click', toggleMenu) )
+
+            function toggleMenu(){
+                appMenu.classList.toggle("menu-visible");
             }
+
+
+
+            // function menu() {
+            //     var element = document.querySelector(".app-menu");
+            //     element.classList.toggle("menu-visible");
+            // }
 
         </script>
 
