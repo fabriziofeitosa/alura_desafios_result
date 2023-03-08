@@ -48,8 +48,8 @@
         let button = document.getElementById('action');
 
         button.onclick = () => {
-          let value1 = Number(document.getElementById('numero-1').value);
-          let value2 = Number(document.getElementById('numero-2').value);
+          let value1 = parseInt(document.getElementById('numero-1').value);
+          let value2 = parseInt(document.getElementById('numero-2').value);
 
           if (isNaN(value1) || isNan(value2)) return alert('Insira os números');
 

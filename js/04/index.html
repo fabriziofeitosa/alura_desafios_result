@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <title>Resposta do Desafio - 01</title>
+  </head>
+
+  <body>
+    <div class="container py-5">
+      <style>
+        /* Caso queira algum estilo adicional */
+      </style>
+
+      <h1>Tente adivinhar meu número</h1>
+      <p>
+        Quando essa página foi carregada eu já pensei em um numero. Tente
+        adivinhar qual é.
+      </p>
+      <hr />
+
+      <p class="mt-2">Já pensei em um valor entre 1 e 100...</p>
+
+      <div class="input-group mt-3">
+        <span class="input-group-text" id="basic-addon1"
+          >Acho que é o número:</span
+        >
+        <input type="number" class="form-control" id="chute" />
+      </div>
+      <button class="mt-2 btn btn-primary" id="action">Tentar adivinhar</button>
+
+      <div id="result" class="mt-4"></div>
+
+      <script>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+
+        console.log(randomNumber);
+
+        const out = document.querySelector('#result');
+        const button = document.querySelector('#action');
+
+        const guess = () => {
+          let n1 = parseInt(document.querySelector('#chute').value);
+
+          if (isNaN(n1)) return alert('Insira o chute');
+
+          if (n1 > randomNumber) {
+            out.innerHTML += `Meu número é <b>menor</b>! <br>`;
+          } else if (n1 < randomNumber) {
+            out.innerHTML += `Meu número é <b>maior</b>! <br>`;
+          } else {
+            out.innerHTML += `Parabéns <b>${n1}</b> é meu número! 👏 <br>`;
+          }
+        };
+
+        button.addEventListener('click', guess);
+      </script>
+    </div>
+  </body>
+</html>
