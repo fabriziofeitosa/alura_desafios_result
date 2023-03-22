@@ -16,217 +16,94 @@
   <body>
     <div class="container py-5">
       <style>
-        #formArea {
-          background: #f5f5f5;
-          box-sizing: border-box;
-          box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
-          border-radius: 10px;
-          max-width: 300px;
-          margin: 0 auto;
-          padding: 1rem;
-        }
-
-        .form-group {
+        .slider {
           position: relative;
-          margin-bottom: 1rem;
-        }
-
-        .form-group input {
-          width: 100%;
-          padding: 10px 0;
-          font-size: 16px;
-          color: #000;
-          border: none;
-          border-bottom: 1px solid #000;
-          outline: none;
-          background: transparent;
-        }
-
-        .form-group label {
-          position: absolute;
-          top: 0;
-          left: 0;
-          padding: 10px 0;
-          font-size: 1rem;
-          color: #606060;
-          pointer-events: none;
-          transition: 0.2s;
-        }
-
-        .form-group.valid label {
-          top: -20px;
-          left: 0;
-          color: #606060;
-          font-size: 12px;
-        }
-
-        #formArea .form-btn {
-          position: relative;
-          display: inline-block;
-          padding: 10px 20px;
-          color: #000;
-          font-size: 16px;
-          text-decoration: none;
-          text-transform: uppercase;
+          height: 500px;
           overflow: hidden;
-          transition: 0.5s;
-          letter-spacing: 4px;
-          border: none;
-          width: 100%;
         }
 
-        #formArea .form-btn:hover {
-          background-color: #fff;
-        }
-
-        #formArea .form-btn span {
+        .slider img {
           position: absolute;
-          display: block;
-        }
-
-        #formArea .form-btn span:nth-child(1) {
           top: 0;
-          left: -100%;
-          width: 100%;
-          height: 2px;
-          background: linear-gradient(90deg, transparent, #c0c0c0);
-          animation: btn-anim1 1s linear infinite;
-        }
-
-        @keyframes btn-anim1 {
-          0% {
-            left: -100%;
-          }
-
-          50%,
-          100% {
-            left: 100%;
-          }
-        }
-
-        #formArea .form-btn span:nth-child(2) {
-          top: -100%;
-          right: 0;
-          width: 2px;
-          height: 100%;
-          background: linear-gradient(180deg, transparent, #c0c0c0);
-          animation: btn-anim2 1s linear infinite;
-          animation-delay: 0.25s;
-        }
-
-        @keyframes btn-anim2 {
-          0% {
-            top: -100%;
-          }
-
-          50%,
-          100% {
-            top: 100%;
-          }
-        }
-
-        #formArea .form-btn span:nth-child(3) {
-          bottom: 0;
-          right: -100%;
-          width: 100%;
-          height: 2px;
-          background: linear-gradient(270deg, transparent, #c0c0c0);
-          animation: btn-anim3 1s linear infinite;
-          animation-delay: 0.5s;
-        }
-
-        @keyframes btn-anim3 {
-          0% {
-            right: -100%;
-          }
-
-          50%,
-          100% {
-            right: 100%;
-          }
-        }
-
-        #formArea .form-btn span:nth-child(4) {
-          bottom: -100%;
           left: 0;
-          width: 2px;
+          width: 100%;
           height: 100%;
-          background: linear-gradient(360deg, transparent, #c0c0c0);
-          animation: btn-anim4 1s linear infinite;
-          animation-delay: 0.75s;
+          opacity: 0;
+          transition: opacity 0.5s ease-in-out;
+          object-fit: cover;
         }
 
-        @keyframes btn-anim4 {
-          0% {
-            bottom: -100%;
-          }
-
-          50%,
-          100% {
-            bottom: 100%;
-          }
+        .slider img.active {
+          opacity: 1;
         }
       </style>
 
-      <h1>Manipulando elementos do form - 01</h1>
-      <p>
-        Vamos criar um <code>placeholder</code> bonito ao estilo Google? Se o
-        elemento de class <code>.form-group</code> receber uma nova class de
-        nome <code>.valid</code> o estilo será aplicado.
-      </p>
+      <h1>Slide - Sem libs externas!</h1>
+      <p>Um sistema muito simples de Slide pra não quebrar tanto a cabeça.</p>
       <hr />
 
-      <form method="POST" id="formArea" action="#">
-        <div class="form-group">
-          <input type="text" name="userFirstName" id="userFirstName" required />
-          <label for="userFirstName">Nome</label>
-        </div>
-        <div class="form-group">
-          <input type="text" name="userLastName" id="userLastName" required />
-          <label for="userLastName">Sobrenome</label>
-        </div>
-        <div class="form-group">
-          <input
-            type="email"
-            name="userEmail"
-            id="userEmail"
-            value="devs@alura.com.br"
-            required
-          />
-          <label for="userEmail">E-mail</label>
-        </div>
-        <div class="form-group">
-          <input type="password" name="password" id="password" required />
-          <label for="password">Senha</label>
-        </div>
+      <div class="slider">
+        <img
+          src="https://picsum.photos/500/?random=1"
+          alt="Slide 1"
+          class="active"
+        />
+        <img src="https://picsum.photos/500/?random=2" alt="Slide 2" />
+        <img src="https://picsum.photos/500/?random=3" alt="Slide 3" />
+      </div>
 
-        <button type="submit" class="form-btn">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          Salvar
+      <div class="d-flex gap-2 mt-3">
+        <button id="prev" class="btn btn-secondary d-block w-100">
+          Anterior slide
         </button>
-      </form>
+        <button id="next" class="btn btn-primary d-block w-100">
+          Próximo slide
+        </button>
+      </div>
 
       <script>
-        const inputs = document.querySelectorAll('.form-group input');
+        const images = document.querySelectorAll('.slider img');
 
-        const updatePlaceholderClass = (element) => {
-          if (element.value) {
-            element.parentNode.classList.add('valid');
-          } else {
-            element.parentNode.classList.remove('valid');
+        const prev = document.getElementById('prev');
+        const next = document.getElementById('next');
+
+        const prevImg = () => {
+          let showed = document.querySelector('.active');
+
+          showed.classList.remove('active');
+
+          let prevEl = showed.previousElementSibling;
+
+          if (!prevEl) {
+            prevEl = images[2];
           }
+
+          prevEl.classList.add('active');
         };
 
-        inputs.forEach((input) => {
-          updatePlaceholderClass(input);
+        const nextImg = () => {
+          let showed = document.querySelector('.active');
 
-          input.addEventListener('input', (e) => {
-            updatePlaceholderClass(input);
-          });
-        });
+          showed.classList.remove('active');
+
+          let nextEl = showed.nextElementSibling;
+
+          if (!nextEl) {
+            nextEl = images[0];
+          }
+
+          nextEl.classList.add('active');
+        };
+
+        prev.onclick = () => {
+          prevImg();
+        };
+
+        next.onclick = () => {
+          nextImg();
+        };
+
+        setInterval(() => nextImg(), 5000);
       </script>
     </div>
   </body>
