@@ -48,32 +48,47 @@
         </div>
 
         <div class="d-flex gap-2 mt-3">
-            <button id="prev" class="btn btn-secondary d-block w-100">Anterior slide</button>
-            <button id="next" class="btn btn-primary d-block w-100">Próximo slide</button>
+            <button id="prev" class="btn btn-secondary d-block w-100 prev">Anterior slide</button>
+            <button id="next" class="btn btn-primary d-block w-100 next">Próximo slide</button>
         </div>
 
         <script>
+            const slides = document.querySelectorAll('.slide');
+            const prev = document.querySelector('.prev');
+            const next = document.querySelector('.next');
 
-            var allInputs = document.querySelectorAll("#formArea input");
-            allInputs.forEach(checkInputValue);
+            const nextSlide = () => {
+                const current = document.querySelector('.active');
+                current.classList.remove('active');
+                if (current.nextElementSibling) {
+                    current.nextElementSibling.classList.add('active');
+                } else {
+                    slides[0].classList.add('active');
+                }
+                setTimeout(() => current.classList.remove('active'));
+            };
 
-            function checkInputValue(element) {
-                if (element.value)
-                    element.parentNode.classList.add("valid");
+            const prevSlide = () => {
+                const current = document.querySelector('.active');
+                current.classList.remove('active');
+                if (current.previousElementSibling) {
+                    current.previousElementSibling.classList.add('active');
+                } else {
+                    slides[slides.length - 1].classList.add('active');
+                }
+                setTimeout(() => current.classList.remove('active'));
+            };
 
-                "keydown,keyup,keypress".split(",").forEach(action => {
-                    element.addEventListener(action, updatePlaceholderClass)
-                });
+            next.addEventListener('click', e => {
+                nextSlide();
 
-            }
+            });
+            prev.addEventListener('click', e => {
+                prevSlide();
 
-            function updatePlaceholderClass() {
-                if (this.value)
-                    this.parentNode.classList.add("valid");
-                else
-                    this.parentNode.classList.remove("valid")
-            }
+            });
 
+            prev.addEventListener
         </script>
 
     </div>
