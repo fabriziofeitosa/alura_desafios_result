@@ -7,13 +7,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
+<<<<<<< HEAD
     <title>Resposta do Desafio - 05</title>
+=======
+    <title>Resposta do Desafio - 01</title>
+>>>>>>> main
 </head>
 
 <body>
     <div class="container py-5">
 
         <style>
+<<<<<<< HEAD
+=======
+            /* Caso queira algum estilo adicional */
+>>>>>>> main
             #appArea {
                 position: relative;
                 overflow: hidden;
@@ -70,7 +78,10 @@
                 font-size: 1rem;
                 padding: .625rem 1rem;
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
             .app-menu-item:hover {
                 background-color: blueviolet;
             }
@@ -79,7 +90,10 @@
                 text-decoration: none;
                 color: inherit;
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
         </style>
 
         <h1>Abrindo e fechando Menu</h1>
@@ -88,7 +102,11 @@
 
         <div id="appArea">
             <nav class="app-menu">
+<<<<<<< HEAD
                 <div class="closeMenu menu-toggle-button" >❌ Fechar Menu </div>
+=======
+                <div class="closeMenu menu-toggle-button">❌ Fechar Menu</div>
+>>>>>>> main
                 <ul class="app-menu-list">
                     <li class="app-menu-item"><a href="#">Início</a></li>
                     <li class="app-menu-item"><a href="#">Blog</a></li>
@@ -99,8 +117,12 @@
 
             <div class="app-content">
                 <h1>Título principal</h1>
+<<<<<<< HEAD
                 <p>Lá no item de class <code>.app-menu</code> você pode adicionar a class <code>.menu-visible</code> que
                     criei e mostrar esse menu. O inverso também.</p>
+=======
+                <p>Lá no item de class <code>.app-menu</code> você pode adicionar a class <code>.menu-visible</code> que criei e mostrar esse menu. O inverso também.</p>
+>>>>>>> main
 
                 <button class="openMenu btn btn-primary menu-toggle-button">Abrir Menu</button>
             </div>
@@ -108,6 +130,7 @@
         </div>
 
         <script>
+<<<<<<< HEAD
             const appMenu = document.querySelector(".app-menu");
             const menuToggleButtons = document.querySelectorAll(".menu-toggle-button");
 
@@ -124,9 +147,26 @@
             //     element.classList.toggle("menu-visible");
             // }
 
+=======
+            // Código JS aqui
+            const appMenu = document.querySelector(".app-menu");
+            const menuToggleButtons = document.querySelectorAll(".menu-toggle-button");
+
+            menuToggleButtons.forEach(
+                button => button.addEventListener('click', toggleMenu) )
+
+            function toggleMenu() {
+                appMenu.classList.toggle("menu-visible");
+            }
+
+>>>>>>> main
         </script>
 
     </div>
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> main

@@ -7,7 +7,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
+<<<<<<< HEAD
     <title>Resposta do Desafio - 02</title>
+=======
+    <title>Resposta do Desafio - 01</title>
+>>>>>>> main
 </head>
 
 <body>
@@ -25,22 +29,42 @@
         <div class="mt-3" id="saida"></div>
 
         <script>
+<<<<<<< HEAD
             const saida = document.querySelector("#saida");
             const button = document.querySelector("#botao")
             button.addEventListener('click', contador)
 
             function contador(){
+=======
+            // Código JS aqui
+            const saida = document.querySelector("#saida");
+            const button = document.querySelector("#botao");
+            button.addEventListener('click', contar);
+
+            function contar() {
+>>>>>>> main
                 saida.textContent = '';
                 let limite = 10;
                 while (limite >= 1) {
                     saida.innerHTML += `${limite}<br>`;
+<<<<<<< HEAD
                     limite --;
                 }
                 saida.innerHTML += `Eeee foooi!`;
+=======
+                    limite--;
+                }
+
+                saida.innerHTML += "Foguete lançado! 🚀"
+>>>>>>> main
             }
         </script>
 
     </div>
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> main

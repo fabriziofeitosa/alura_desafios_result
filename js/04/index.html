@@ -7,7 +7,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
+<<<<<<< HEAD
     <title>Resposta do Desafio - 04</title>
+=======
+    <title>Resposta do Desafio - 01</title>
+>>>>>>> main
 </head>
 
 <body>
@@ -15,7 +19,10 @@
 
         <style>
             /* Caso queira algum estilo adicional */
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
         </style>
 
         <h1>Tente adivinhar meu número</h1>
@@ -34,6 +41,7 @@
         </div>
 
         <script>
+<<<<<<< HEAD
             const saida = document.querySelector("#result");
             const button = document.querySelector("#action");
             button.addEventListener('click', jogar)
@@ -52,10 +60,28 @@
                     res.innerHTML += `Você falou ${jogador} e o numero é menor!<br>`;
                 } else{
                     res.innerHTML += `Você falou ${jogador} e acertou!! Meu numero é: ${computador}<br>`;                   ;
+=======
+            // Código JS aqui
+            const button = document.querySelector("#action");
+            button.addEventListener('click', jogar);
+            var computador = sortear();
+
+            function jogar() {
+                let res = document.querySelector("#result");
+                let jogador = parseInt(document.querySelector("#chute").value);
+
+                if( jogador < computador ) {
+                    res.innerHTML += `Você falou ${jogador}. Meu número é MAIOR.`;
+                } else if (jogador > computador) {
+                    res.innerHTML += `Você falou ${jogador}. Meu número é MENOR.`;
+                } else {
+                    res.innerHTML += `Parabéns! Você acertou o numero! Meu numero é ${computador}.`;
+>>>>>>> main
                 }
             }
 
             function sortear(min = 1, max = 100){
+<<<<<<< HEAD
                 let dif= max-min;
                 let aleatorio = Math.random();
                 let result= min + Math.trunc(dif * aleatorio);
@@ -81,10 +107,28 @@
             //     }
 
             // }
+=======
+                let result = parseInt(Math.random() * (max - min) + min);
+                // Math.floor(Math.random() * max) + min
+                console.log(result);
+                return result;
+
+                /* let dif = max - min;
+                let aleatorio = Math.random();
+                let result = min + Math.trunc(dif * aleatorio);
+                console.log( result );
+
+                return result; */
+            };
+>>>>>>> main
 
         </script>
 
     </div>
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> main
