@@ -14,6 +14,19 @@
         <p>Quem nunca contou até 10 né?</p>
         <hr>
         <div class="mt-3" id="saida"></div>
+
+        <?php
+            $counter = 1;
+            if ($counter == 1){
+                for(
+                    $counter = 1;
+                    $counter <= 10;
+                    $counter++
+                ){
+                    echo "<p>$counter</p>";
+                }
+            }
+         ?>
     </div>
 
     <style>
